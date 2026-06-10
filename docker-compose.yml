@@ -1,0 +1,31 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0.7
+    container_name: keycloak
+    command:
+      - start
+      
+    environment:
+      #Connect to your EXISTING "iam" database
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://95.111.245.161:5850/iam
+      KC_DB_USERNAME: ${DB_USER}
+      KC_DB_PASSWORD: ${DB_PASSWORD}
+
+      # Bootstrap admin (created only on first boot if iam is empty)
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASSWORD}
+
+      # Hostname + reverse proxy (TLS terminated at your proxy)
+      KC_HOSTNAME: https://iam.icheck.today
+      KC_HTTP_ENABLED: "true"
+      KC_PROXY_HEADERS: xforwarded
+        # use "forwarded" if your proxy sends the Forwarded header
+    ports:
+      - "127.0.0.1:8080:8080"
+
+    volumes:
+  
+      - ./keycloak/themes:/opt/keycloak/themes
+
+    restart: always
