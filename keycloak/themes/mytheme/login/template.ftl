@@ -7,7 +7,7 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Login | ICHECK</title>
     <link rel="icon" type="image/png" href="${url.resourcesPath}/img/favicon.png" />
-    <#if propertifes.styles?has_content>
+    <#if properties.styles?? && properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
