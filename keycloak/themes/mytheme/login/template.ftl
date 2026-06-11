@@ -77,10 +77,6 @@
         </#if>
 
         <div class="istad-panel-inner">
-            <div class="mobile-logo-wrap">
-                <img class="mobile-logo" src="${url.resourcesPath}/logo/logo.png" alt="${(realm.displayName!'iCheck')}" width="220" height="78"/>
-            </div>
-
             <#nested "header">
 
             <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>

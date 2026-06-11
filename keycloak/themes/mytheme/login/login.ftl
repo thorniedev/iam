@@ -53,10 +53,6 @@
 
     <section class="right">
         <div class="login-card">
-            <div class="mobile-logo-wrap">
-                <img src="${url.resourcesPath}/logo/logo.png" class="mobile-logo" alt="iCheck" width="220" height="78">
-            </div>
-
             <h2>Login</h2>
             <p class="desc">Enter your credentials to continue</p>
 
