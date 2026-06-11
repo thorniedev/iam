@@ -12,34 +12,35 @@
 
     <section class="left">
         <div class="content">
-            <h1>Shaping the future of<br>Tech Education.</h1>
+        
+            <h1>Smart Attendance for Modern Classrooms</h1>
 
             <p class="subtitle">
-                A specialized portal designed to manage academic excellence,
-                student success, and institutional growth.
+                A seamless, real-time tracking platform built to eliminate administrative 
+                overhead and keep academic progress on track.
             </p>
 
             <div class="feature">
-                <div class="icon">📘</div>
+               
                 <div>
-                    <h3>Academic Excellence</h3>
-                    <p>Manage curriculum, grades, and educational standards.</p>
+                    <h3>QR & GPS Validation</h3>
+                    <p>Instant, secure, and location-verified student check-ins.</p>
                 </div>
             </div>
 
             <div class="feature">
-                <div class="icon">👥</div>
+               
                 <div>
-                    <h3>Student Success</h3>
-                    <p>Monitor progress and support every student's journey.</p>
+                    <h3>Real-Time Monitoring</h3>
+                    <p>Live dashboard visibility for instructors to track attendance as it happens.</p>
                 </div>
             </div>
 
             <div class="feature">
-                <div class="icon">🎓</div>
+                
                 <div>
-                    <h3>Institutional Growth</h3>
-                    <p>Scalable infrastructure for modern tech schools.</p>
+                    <h3>Effortless Reporting</h3>
+                    <p>One-click exports to PDF and Excel for quick academic record-keeping.</p>
                 </div>
             </div>
         </div>

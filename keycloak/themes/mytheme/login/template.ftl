@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <title>Login | ICHECK</title>
-    <link rel="icon" type="image/png" href="${url.resourcesPath}/img/favicon.png" />
+    <link rel="icon" type="image/png" href="${url.resourcesPath}/img/logo.png" />
     <#if properties.styles?? && properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
@@ -19,8 +19,8 @@
     <#-- LEFT: branding / marketing panel -->
     <aside class="istad-hero">
         <div class="istad-hero-inner">
-            <h1 class="istad-hero-title">Shaping the future of<br/>Tech Education.</h1>
-            <p class="istad-hero-text">A specialized portal designed to manage academic excellence, student success, and institutional growth.</p>
+            <h1 class="istad-hero-title">Smart Attendance for Modern Classrooms</h1>
+            <p class="istad-hero-text">A seamless, real-time tracking platform built to eliminate administrative overhead and keep academic progress on track.</p>
 
             <ul class="istad-features">
                 <li class="istad-feature">
@@ -28,8 +28,8 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
                     </span>
                     <span class="istad-feature-body">
-                        <span class="istad-feature-title">Academic Excellence</span>
-                        <span class="istad-feature-desc">Manage curriculum, grades, and educational standards.</span>
+                        <span class="istad-feature-title">QR & GPS Validation</span>
+                        <span class="istad-feature-desc">Instant, secure, and location-verified student check-ins.</span>
                     </span>
                 </li>
                 <li class="istad-feature">
@@ -37,8 +37,8 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </span>
                     <span class="istad-feature-body">
-                        <span class="istad-feature-title">Student Success</span>
-                        <span class="istad-feature-desc">Monitor progress and support every student's journey.</span>
+                        <span class="istad-feature-title">Real-Time Monitoring</span>
+                        <span class="istad-feature-desc">Live dashboard visibility for instructors to track attendance as it happens.</span>
                     </span>
                 </li>
                 <li class="istad-feature">
@@ -46,8 +46,8 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
                     </span>
                     <span class="istad-feature-body">
-                        <span class="istad-feature-title">Institutional Growth</span>
-                        <span class="istad-feature-desc">Scalable infrastructure for modern tech schools.</span>
+                        <span class="istad-feature-title">Effortless Reporting</span>
+                        <span class="istad-feature-desc">One-click exports to PDF and Excel for quick academic record-keeping.</span>
                     </span>
                 </li>
             </ul>
