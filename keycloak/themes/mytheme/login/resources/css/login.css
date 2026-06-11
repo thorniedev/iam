@@ -33,6 +33,7 @@ body {
 }
 
 .hero-logo-wrap {
+    display: block !important;
     width: 260px;
     max-width: 52vw;
     height: 92px;
@@ -50,7 +51,7 @@ body {
 }
 
 .mobile-logo-wrap {
-    display: none;
+    display: none !important;
     width: 220px;
     max-width: 70vw;
     height: 78px;
@@ -255,7 +256,7 @@ button:hover {
     }
 
     .mobile-logo-wrap {
-        display: block;
+        display: block !important;
     }
 
     .login-card h2 {
