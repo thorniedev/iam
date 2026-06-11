@@ -12,11 +12,12 @@
 
     <section class="left">
         <div class="content">
-        
+            <img src="${url.resourcesPath}/img/logo.png" class="hero-logo" alt="iCheck">
+
             <h1>Smart Attendance for Modern Classrooms</h1>
 
             <p class="subtitle">
-                A seamless, real-time tracking platform built to eliminate administrative 
+                A seamless, real-time tracking platform built to eliminate administrative
                 overhead and keep academic progress on track.
             </p>
 
@@ -48,9 +49,6 @@
 
     <section class="right">
         <div class="login-card">
-
-            <img src="${url.resourcesPath}/img/logo.png" class="logo" alt="iSTAD">
-
             <h2>Login</h2>
             <p class="desc">Enter your credentials to continue</p>
 
