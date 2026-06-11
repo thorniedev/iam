@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${msg("loginTitle",(realm.displayName!''))}</title>
+    <link rel="icon" href="${url.resourcesPath}/img/favicaon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="${url.resourcesPath}/img/favicaon.ico" type="image/x-icon">
     <link rel="stylesheet" href="${url.resourcesPath}/css/login.css">
 </head>
 
@@ -51,10 +53,6 @@
 
     <section class="right">
         <div class="login-card">
-            <div class="mobile-logo-wrap">
-                <img src="${url.resourcesPath}/logo/logo.png" class="mobile-logo" alt="iCheck" width="220" height="78">
-            </div>
-
             <h2>Login</h2>
             <p class="desc">Enter your credentials to continue</p>
 

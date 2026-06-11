@@ -50,31 +50,6 @@ body {
     object-position: center !important;
 }
 
-.mobile-logo-wrap {
-    display: none !important;
-    width: 220px;
-    max-width: 70vw;
-    height: 78px;
-    margin: 0 auto 36px;
-    overflow: hidden;
-}
-
-.mobile-logo {
-    display: none !important;
-    width: 220px !important;
-    max-width: 100% !important;
-    height: 78px !important;
-    object-fit: contain !important;
-    object-position: center !important;
-}
-
-@media (min-width: 901px) {
-    .mobile-logo-wrap,
-    .mobile-logo {
-        display: none !important;
-    }
-}
-
 .left h1,
 .istad-hero-title {
     max-width: 500px;
@@ -267,12 +242,18 @@ button:hover {
         transform: none;
     }
 
-    .mobile-logo-wrap {
+    .login-card::before,
+    .istad-panel-inner::before {
+        content: "";
         display: block !important;
-    }
-
-    .mobile-logo {
-        display: block !important;
+        width: 220px;
+        max-width: 70vw;
+        height: 78px;
+        margin: 0 auto 36px;
+        background-image: url("../logo/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
     .login-card h2 {
