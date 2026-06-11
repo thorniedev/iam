@@ -37,7 +37,7 @@ body {
     width: 260px;
     max-width: 52vw;
     height: 92px;
-    margin: 0 auto 26px;
+    margin: 0 auto 26px !important;
     overflow: hidden;
 }
 

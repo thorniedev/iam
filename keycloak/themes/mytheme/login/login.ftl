@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="${url.resourcesPath}/css/login.css">
     <style>
         @media (min-width: 901px) {
+            .hero-logo-wrap {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
             .login-card {
                 max-width: 536px !important;
                 min-height: 576px !important;
