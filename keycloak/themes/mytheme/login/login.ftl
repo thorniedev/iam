@@ -7,6 +7,36 @@
     <link rel="icon" href="${url.resourcesPath}/img/favicaon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="${url.resourcesPath}/img/favicaon.ico" type="image/x-icon">
     <link rel="stylesheet" href="${url.resourcesPath}/css/login.css">
+    <style>
+        @media (min-width: 901px) {
+            .login-card {
+                max-width: 536px !important;
+                min-height: 576px !important;
+                padding: 46px 52px 56px !important;
+                border: 2px solid #111111 !important;
+                border-radius: 12px !important;
+            }
+
+            .login-card::before {
+                content: none !important;
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .right {
+                min-height: 100vh !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .login-card {
+                border: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
 </head>
 
 <body>

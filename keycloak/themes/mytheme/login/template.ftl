@@ -13,6 +13,36 @@
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
+    <style>
+        @media (min-width: 901px) {
+            .istad-panel-inner {
+                max-width: 536px !important;
+                min-height: 576px !important;
+                padding: 46px 52px 56px !important;
+                border: 2px solid #111111 !important;
+                border-radius: 12px !important;
+            }
+
+            .istad-panel-inner::before {
+                content: none !important;
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .istad-panel {
+                min-height: 100vh !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .istad-panel-inner {
+                border: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
 </head>
 <body class="istad-body">
 <div class="istad-page">
