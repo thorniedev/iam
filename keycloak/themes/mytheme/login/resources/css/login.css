@@ -5,143 +5,181 @@
 body {
     margin: 0;
     font-family: Inter, Arial, sans-serif;
-    background: #f4f8fb;
-    color: #111827;
+    background: #ffffff;
+    color: #050505;
 }
 
-.page {
+.page,
+.istad-page {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.left {
-    background: #f5f9fc;
+.left,
+.istad-hero {
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px;
-    border-right: 1px solid #e5edf3;
+    padding: 72px 56px 72px 96px;
 }
 
-.content {
-    max-width: 560px;
-}
-
-.left h1 {
-    font-size: 44px;
-}
-
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 70px;
-}
-
-.feature {
-    display: flex;
-    gap: 18px;
-    margin-bottom: 28px;
-}
-
-.icon {
-    width: 22px;
-    height: 22px;
-    background: #e8f2ff;
-    color: #0b63ce;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.feature h3 {
-    margin: 0 0 6px;
-    font-size: 18px;
-}
-
-.feature p {
-    margin: 0;
-    color: #64748b;
-}
-
-.right {
-    background: #f5f9fc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-}
-
-.login-card {
+.content,
+.istad-hero-inner {
     width: 100%;
-    max-width: 500px;
-    transform: translateY(30px); /* move form lower */
+    max-width: 570px;
 }
 
-
-.logo {
+.hero-logo {
     display: block;
-    width: 95px;
+    width: 260px;
     height: auto;
-    margin: 0 auto 56px auto;
+    margin: 0 0 28px;
 }
 
-.login-card h2 {
-    font-size: 32px;
-    margin: 0 0 10px;
+.left h1,
+.istad-hero-title {
+    max-width: 500px;
+    margin: 0 0 24px;
+    font-size: 39px;
+    line-height: 1.14;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.subtitle,
+.istad-hero-text {
+    max-width: 560px;
+    margin: 0 0 28px;
+    font-size: 17px;
+    line-height: 1.45;
+    color: #050505;
+}
+
+.istad-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.feature,
+.istad-feature {
+    margin-bottom: 22px;
+}
+
+.istad-feature-icon {
+    display: none;
+}
+
+.feature h3,
+.istad-feature-title {
+    display: block;
+    margin: 0 0 2px;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.feature p,
+.istad-feature-desc {
+    display: block;
+    margin: 0;
+    max-width: 560px;
+    color: #050505;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.right,
+.istad-panel {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 72px 96px 72px 56px;
+}
+
+.login-card,
+.istad-panel-inner {
+    width: 100%;
+    max-width: 535px;
+    min-height: 575px;
+    padding: 44px 52px 56px;
+    border: 1.5px solid #050505;
+    border-radius: 12px;
+    transform: none;
+}
+
+.login-card h2,
+.istad-panel-inner h1,
+.istad-panel-inner h2 {
+    margin: 0 0 14px;
+    color: #223c97;
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: 0;
 }
 
 .desc {
-    color: #64748b;
-    margin-bottom: 42px;
+    margin: 0 0 58px;
+    color: #737373;
+    text-align: center;
+    font-size: 16px;
 }
 
 label {
     display: block;
-    font-weight: 600;
+    color: #050505;
+    font-size: 17px;
+    font-weight: 800;
     margin-bottom: 10px;
 }
 
 input {
     width: 100%;
-    height: 50px;
-    border: 1px solid #d7e0e8;
+    height: 54px;
+    border: 1px solid #737373;
     border-radius: 8px;
-    padding: 0 18px;
-    font-size: 16px;
+    padding: 0 14px;
+    font-size: 18px;
     margin-bottom: 28px;
     outline: none;
+    background: #ffffff;
 }
 
 input:focus {
-    border-color: #0b63ce;
-    box-shadow: 0 0 0 3px rgba(11, 99, 206, 0.15);
+    border-color: #3151df;
+    box-shadow: 0 0 0 3px rgba(49, 81, 223, 0.16);
 }
 
 .forgot {
     display: block;
     text-align: right;
-    color: #075cad;
+    color: #223c97;
     text-decoration: none;
-    margin-top: -14px;
-    margin-bottom: 28px;
+    margin-top: -20px;
+    margin-bottom: 72px;
     font-weight: 500;
+    font-size: 16px;
 }
 
 button {
     width: 100%;
-    height: 50px;
-    background: #075cad;
+    height: 52px;
+    background: #3151df;
     border: none;
     border-radius: 8px;
-    color: white;
-    font-size: 17px;
-    font-weight: 700;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
     cursor: pointer;
 }
 
 button:hover {
-    background: #064f95;
+    background: #2744c7;
 }
 
 .alert {
@@ -156,33 +194,33 @@ button:hover {
 @media (max-width: 900px) {
 
     /* Hide left section completely */
-    .left {
+    .left,
+    .istad-hero {
         display: none !important;
     }
 
-    .page {
+    .page,
+    .istad-page {
         display: block;
         min-height: 100vh;
     }
 
-    .right {
+    .right,
+    .istad-panel {
         min-height: 100vh;
         padding: 24px;
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
     }
 
-    .login-card {
+    .login-card,
+    .istad-panel-inner {
         width: 100%;
         max-width: 100%;
+        min-height: auto;
+        padding: 32px 24px;
         transform: none;
-        margin-top: 20px;
-    }
-
-    .logo {
-        width: 70px;
-        margin: 0 auto 24px;
     }
 
     .login-card h2 {
@@ -191,12 +229,16 @@ button:hover {
     }
 
     .desc {
-        margin-bottom: 24px;
+        margin-bottom: 32px;
     }
 
     input {
         height: 52px;
         margin-bottom: 20px;
+    }
+
+    .forgot {
+        margin-bottom: 36px;
     }
 
     button {
