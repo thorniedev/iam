@@ -32,14 +32,21 @@ body {
     max-width: 570px;
 }
 
-.hero-logo {
-    display: block;
-    width: min(260px, 52vw);
-    max-height: 92px;
-    height: auto;
-    object-fit: contain;
-    object-position: left center;
+.hero-logo-wrap {
+    width: 260px;
+    max-width: 52vw;
+    height: 92px;
     margin: 0 0 26px;
+    overflow: hidden;
+}
+
+.hero-logo {
+    display: block !important;
+    width: 260px !important;
+    max-width: 100% !important;
+    height: 92px !important;
+    object-fit: contain !important;
+    object-position: left center !important;
 }
 
 .left h1,
