@@ -15,6 +15,11 @@
     </#if>
     <style>
         @media (min-width: 901px) {
+            .hero-logo-wrap {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
             .istad-panel-inner {
                 max-width: 536px !important;
                 min-height: 576px !important;
