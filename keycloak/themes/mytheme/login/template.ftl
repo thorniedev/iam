@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
     <title>Login | ICHECK</title>
-    <link rel="icon" type="image/png" href="${url.resourcesPath}/img/logo.png" />
+    <link rel="icon" href="${url.resourcesPath}/img/favicaon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="${url.resourcesPath}/img/favicaon.ico" type="image/x-icon" />
     <#if properties.styles?? && properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
