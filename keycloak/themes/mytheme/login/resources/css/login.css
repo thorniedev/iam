@@ -202,6 +202,23 @@ button:hover {
     color: #991b1b;
 }
 
+@media (min-width: 901px) {
+    .login-card,
+    .istad-panel-inner {
+        max-width: 536px !important;
+        min-height: 576px !important;
+        padding: 46px 52px 56px !important;
+        border: 2px solid #111111 !important;
+        border-radius: 12px !important;
+    }
+
+    .login-card::before,
+    .istad-panel-inner::before {
+        content: none !important;
+        display: none !important;
+    }
+}
+
 /* Mobile responsive */
 @media (max-width: 900px) {
 
