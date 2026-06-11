@@ -19,7 +19,9 @@
     <#-- LEFT: branding / marketing panel -->
     <aside class="istad-hero">
         <div class="istad-hero-inner">
-            <img class="hero-logo" src="${url.resourcesPath}/logo/logo.png" alt="${(realm.displayName!'iCheck')}"/>
+            <div class="hero-logo-wrap">
+                <img class="hero-logo" src="${url.resourcesPath}/logo/logo.png" alt="${(realm.displayName!'iCheck')}" width="260" height="92"/>
+            </div>
 
             <h1 class="istad-hero-title">Smart Attendance for Modern Classrooms</h1>
             <p class="istad-hero-text">A seamless, real-time tracking platform built to eliminate administrative overhead and keep academic progress on track.</p>
