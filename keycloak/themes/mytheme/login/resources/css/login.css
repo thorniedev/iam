@@ -60,12 +60,19 @@ body {
 }
 
 .mobile-logo {
-    display: block !important;
+    display: none !important;
     width: 220px !important;
     max-width: 100% !important;
     height: 78px !important;
     object-fit: contain !important;
     object-position: center !important;
+}
+
+@media (min-width: 901px) {
+    .mobile-logo-wrap,
+    .mobile-logo {
+        display: none !important;
+    }
 }
 
 .left h1,
@@ -229,6 +236,11 @@ button:hover {
         display: none !important;
     }
 
+    .hero-logo-wrap,
+    .hero-logo {
+        display: none !important;
+    }
+
     .page,
     .istad-page {
         display: block;
@@ -256,6 +268,10 @@ button:hover {
     }
 
     .mobile-logo-wrap {
+        display: block !important;
+    }
+
+    .mobile-logo {
         display: block !important;
     }
 
