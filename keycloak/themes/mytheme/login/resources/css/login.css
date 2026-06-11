@@ -14,15 +14,16 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background: #ffffff;
 }
 
 .left,
 .istad-hero {
     background: #ffffff;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 72px 56px 72px 96px;
+    padding: 78px 56px 64px 96px;
 }
 
 .content,
@@ -33,9 +34,12 @@ body {
 
 .hero-logo {
     display: block;
-    width: 260px;
+    width: min(260px, 52vw);
+    max-height: 92px;
     height: auto;
-    margin: 0 0 28px;
+    object-fit: contain;
+    object-position: left center;
+    margin: 0 0 26px;
 }
 
 .left h1,
@@ -97,15 +101,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 72px 96px 72px 56px;
+    padding: 78px 96px 64px 56px;
 }
 
 .login-card,
 .istad-panel-inner {
     width: 100%;
-    max-width: 535px;
-    min-height: 575px;
-    padding: 44px 52px 56px;
+    max-width: 536px;
+    min-height: 576px;
+    padding: 46px 52px 56px;
     border: 1.5px solid #050505;
     border-radius: 12px;
     transform: none;
@@ -124,7 +128,7 @@ body {
 }
 
 .desc {
-    margin: 0 0 58px;
+    margin: 0 0 56px;
     color: #737373;
     text-align: center;
     font-size: 16px;
@@ -161,7 +165,7 @@ input:focus {
     color: #223c97;
     text-decoration: none;
     margin-top: -20px;
-    margin-bottom: 72px;
+    margin-bottom: 70px;
     font-weight: 500;
     font-size: 16px;
 }

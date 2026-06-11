@@ -12,7 +12,7 @@
 
     <section class="left">
         <div class="content">
-            <img src="${url.resourcesPath}/img/logo.png" class="hero-logo" alt="iCheck">
+            <img src="${url.resourcesPath}/logo/logo.png" class="hero-logo" alt="iCheck">
 
             <h1>Smart Attendance for Modern Classrooms</h1>
 
