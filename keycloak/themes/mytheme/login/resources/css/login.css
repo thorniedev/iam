@@ -1,364 +1,430 @@
+/* =========================================================
+   iCheck — Keycloak login theme
+   Borderless split layout, tinted background, center divider.
+   Desktop : marketing (left)  |  form (right)
+   Mobile  : single form, logo centered, "Login" left-aligned
+   ========================================================= */
+
 * {
     box-sizing: border-box;
 }
 
-body {
+.auth-body {
     margin: 0;
-    font-family: Inter, Arial, sans-serif;
-    background: #ffffff;
-    color: #050505;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: #0f1729;
+    background: #f5f8fc;
+    -webkit-font-smoothing: antialiased;
 }
 
-.page,
-.istad-page {
+/* ---------- Page shell ---------- */
+.auth-page {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: #ffffff;
 }
 
-.left,
-.istad-hero {
-    background: #ffffff;
+/* ---------- LEFT: marketing ---------- */
+.auth-hero {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding: 78px 56px 64px 96px;
+    padding: 64px 72px;
 }
 
-.content,
-.istad-hero-inner {
+.auth-hero-inner {
     width: 100%;
-    max-width: 570px;
+    max-width: 540px;
 }
 
-.hero-logo-wrap {
-    display: block !important;
-    width: 260px;
-    max-width: 52vw;
-    height: 92px;
-    margin: 0 auto 26px !important;
-    overflow: hidden;
-}
-
-.hero-logo {
-    display: block !important;
-    width: 260px !important;
-    max-width: 100% !important;
-    height: 92px !important;
-    object-fit: contain !important;
-    object-position: center !important;
-}
-
-.left h1,
-.istad-hero-title {
-    max-width: 500px;
+.hero-title {
     margin: 0 0 24px;
-    font-size: 39px;
-    line-height: 1.14;
+    font-size: clamp(34px, 3.2vw, 46px);
+    line-height: 1.1;
     font-weight: 800;
-    letter-spacing: 0;
+    letter-spacing: -0.5px;
+    color: #0f1729;
 }
 
-.subtitle,
-.istad-hero-text {
-    max-width: 560px;
-    margin: 0 0 28px;
-    font-size: 17px;
-    line-height: 1.45;
-    color: #050505;
+.hero-sub {
+    margin: 0 0 64px;
+    max-width: 480px;
+    font-size: clamp(16px, 1.3vw, 19px);
+    line-height: 1.55;
+    color: #667085;
 }
 
-.istad-features {
+.hero-features {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.feature,
-.istad-feature {
-    margin-bottom: 22px;
+.hero-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
 }
 
-.istad-feature-icon {
-    display: none;
+.hero-feature:last-child {
+    margin-bottom: 0;
 }
 
-.feature h3,
-.istad-feature-title {
+.hero-feature-icon {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    color: #1d4ed8;
+}
+
+.hero-feature-icon svg {
+    width: 26px;
+    height: 26px;
     display: block;
-    margin: 0 0 2px;
+}
+
+.hero-feature-text {
+    display: block;
+}
+
+.hero-feature-title {
+    display: block;
+    margin: 0 0 3px;
     font-size: 18px;
-    line-height: 1.25;
-    font-weight: 800;
+    font-weight: 700;
+    color: #101828;
 }
 
-.feature p,
-.istad-feature-desc {
+.hero-feature-desc {
     display: block;
-    margin: 0;
-    max-width: 560px;
-    color: #050505;
-    font-size: 17px;
-    line-height: 1.4;
+    font-size: 15.5px;
+    line-height: 1.45;
+    color: #667085;
 }
 
-.right,
-.istad-panel {
-    background: #ffffff;
+/* ---------- RIGHT: form panel ---------- */
+.auth-panel {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 78px 96px 64px 56px;
+    padding: 64px 72px;
+    border-left: 1px solid #e2e8f0;
 }
 
-.login-card,
-.istad-panel-inner {
+.auth-panel-inner {
     width: 100%;
-    max-width: 536px;
-    min-height: 576px;
-    padding: 46px 52px 56px;
-    border: 1.5px solid #050505;
-    border-radius: 12px;
-    transform: none;
+    max-width: 460px;
 }
 
-.logout-card {
+/* logo + language row */
+.auth-top {
     display: flex;
-    min-height: 420px;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
 }
 
-.login-card h2,
-.istad-panel-inner h1,
-.istad-panel-inner h2 {
-    margin: 0 0 14px;
-    color: #223c97;
-    text-align: center;
-    font-size: 36px;
+.auth-logo {
+    height: 77px;
+    width: auto;
+    display: block;
+}
+
+/* language pill */
+.lang {
+    position: relative;
+}
+
+.lang summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    cursor: pointer;
+    padding: 9px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #344054;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.lang summary::-webkit-details-marker {
+    display: none;
+}
+
+.lang-globe {
+    width: 18px;
+    height: 18px;
+    color: #475467;
+}
+
+.lang-caret {
+    width: 16px;
+    height: 16px;
+    color: #98a2b3;
+}
+
+.lang ul {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    z-index: 20;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    min-width: 160px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(16, 24, 40, 0.12);
+}
+
+.lang ul li a {
+    display: block;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: #344054;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.lang ul li a:hover {
+    background: #f2f5fa;
+}
+
+/* form / page heading */
+.form-title {
+    margin: 0 0 8px;
+    font-size: 38px;
     line-height: 1.1;
     font-weight: 800;
-    letter-spacing: 0;
+    letter-spacing: -0.5px;
+    color: #13224f;
 }
 
-.desc {
-    margin: 0 0 56px;
-    color: #737373;
-    text-align: center;
+.form-sub {
+    margin: 0 0 36px;
     font-size: 16px;
+    color: #667085;
 }
 
-.logout-card .desc {
-    max-width: 360px;
-    margin-right: auto;
-    margin-bottom: 44px;
-    margin-left: auto;
-    line-height: 1.45;
-}
-
+/* fields */
 label {
     display: block;
-    color: #050505;
-    font-size: 17px;
-    font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #344054;
 }
 
-input {
+input:not([type]),
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"] {
     width: 100%;
-    height: 54px;
-    border: 1px solid #737373;
-    border-radius: 8px;
-    padding: 0 14px;
-    font-size: 18px;
-    margin-bottom: 28px;
-    outline: none;
+    height: 56px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: #101828;
     background: #ffffff;
+    outline: none;
+    margin-bottom: 22px;
+}
+
+input::placeholder {
+    color: #98a2b3;
 }
 
 input:focus {
-    border-color: #3151df;
-    box-shadow: 0 0 0 3px rgba(49, 81, 223, 0.16);
+    border-color: #1351b4;
+    box-shadow: 0 0 0 4px rgba(19, 81, 180, 0.12);
 }
 
-.forgot {
-    display: block;
-    text-align: right;
-    color: #223c97;
-    text-decoration: none;
-    margin-top: -20px;
-    margin-bottom: 70px;
-    font-weight: 500;
-    font-size: 16px;
+/* password + eye toggle */
+.pwd-wrap {
+    position: relative;
 }
 
-button {
-    width: 100%;
-    height: 52px;
-    background: #3151df;
+.pwd-wrap input {
+    padding-right: 48px;
+}
+
+.pwd-eye {
+    position: absolute;
+    top: 28px;
+    right: 14px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
     border: none;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 800;
+    background: transparent;
+    color: #98a2b3;
     cursor: pointer;
 }
 
-button:hover {
-    background: #2744c7;
+.pwd-eye svg {
+    width: 22px;
+    height: 22px;
 }
 
-.logout-card button {
-    margin-top: 0;
+.pwd-eye .eye-off {
+    display: none;
 }
 
-.alert {
+.pwd-eye.is-on .eye-open {
+    display: none;
+}
+
+.pwd-eye.is-on .eye-off {
+    display: block;
+}
+
+/* forgot password */
+.forgot {
+    display: block;
+    text-align: right;
+    margin: -4px 0 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+/* submit button (custom forms + Keycloak base-flow forms) */
+.btn,
+.auth-panel-inner button[type="submit"],
+.auth-panel-inner input[type="submit"] {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 10px;
+    background: #1351b4;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover,
+.auth-panel-inner button[type="submit"]:hover,
+.auth-panel-inner input[type="submit"]:hover {
+    background: #0e4196;
+}
+
+.auth-panel-inner--logout .btn {
+    margin-top: 24px;
+}
+
+/* alert */
+.alert,
+.istad-alert {
     padding: 14px 16px;
-    border-radius: 8px;
-    margin-bottom: 24px;
+    border-radius: 10px;
+    margin-bottom: 22px;
     background: #fee2e2;
     color: #991b1b;
+    font-size: 15px;
 }
 
-@media (min-width: 901px) {
-    .login-card,
-    .istad-panel-inner {
-        max-width: 536px !important;
-        min-height: 576px !important;
-        padding: 46px 52px 56px !important;
-        border: 2px solid #111111 !important;
-        border-radius: 12px !important;
-    }
-
-    .logout-card {
-        min-height: 420px !important;
-        justify-content: center !important;
-    }
-
-    .login-card::before,
-    .istad-panel-inner::before {
-        content: none !important;
-        display: none !important;
-    }
+/* =========================================================
+   Keycloak base-flow pages (Forgot password, OTP, Update
+   password, etc.) rendered through template.ftl + base theme
+   ========================================================= */
+#kc-form-options {
+    margin: 0 0 20px;
+    font-size: 15px;
 }
 
-/* Mobile responsive */
+#kc-form-options a,
+.auth-info a,
+#kc-info a {
+    color: #1d4ed8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#kc-form-options a:hover,
+.auth-info a:hover,
+#kc-info a:hover {
+    text-decoration: underline;
+}
+
+.auth-info,
+#kc-info {
+    margin-top: 22px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: #667085;
+}
+
+/* =========================================================
+   Mobile (<= 900px): single column, logo centered,
+   heading + description left-aligned, no divider/border
+   ========================================================= */
 @media (max-width: 900px) {
 
-    /* Hide left section completely */
-    .left,
-    .istad-hero {
-        display: none !important;
+    .auth-hero {
+        display: none;
     }
 
-    .hero-logo-wrap,
-    .hero-logo {
-        display: none !important;
-    }
-
-    .page,
-    .istad-page {
+    .auth-page {
         display: block;
-        min-height: 100vh;
     }
 
-    .right,
-    .istad-panel {
+    .auth-panel {
         min-height: 100vh;
-        padding: 32px 24px;
-        display: flex;
-        justify-content: center;
+        padding: 40px 24px;
+        border-left: none;
+    }
+
+    .auth-panel-inner {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .auth-top {
+        flex-direction: column;
         align-items: center;
-    }
-
-    .login-card,
-    .istad-panel-inner {
-        width: 100%;
-        max-width: 568px;
-        min-height: auto;
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        transform: none;
-    }
-
-    .logout-card {
-        display: block;
-    }
-
-    .login-card::before,
-    .istad-panel-inner::before {
-        content: "";
-        display: block !important;
-        width: 220px;
-        max-width: 70vw;
-        height: 78px;
-        margin: 0 auto 36px;
-        background-image: url("../logo/logo.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-
-    .login-card h2 {
-        font-size: 36px;
-        margin-bottom: 14px;
-        text-align: center;
-    }
-
-    .desc {
-        margin-bottom: 36px;
-        text-align: center;
-    }
-
-    input {
-        height: 52px;
-        margin-bottom: 20px;
-    }
-
-    .forgot {
+        gap: 16px;
         margin-bottom: 36px;
     }
 
-    button {
-        height: 52px;
+    .auth-logo {
+        height: 70px;
+    }
+
+    .form-title {
+        font-size: 34px;
     }
 }
 
+/* ---------- Small phones (<= 520px) ---------- */
 @media (max-width: 520px) {
-    .right,
-    .istad-panel {
-        padding: 40px 28px;
+    .auth-panel {
+        padding: 32px 20px;
     }
 
-    .login-card,
-    .istad-panel-inner {
+    .auth-panel-inner {
         max-width: 100%;
     }
 
-    .login-card h2,
-    .istad-panel-inner h1,
-    .istad-panel-inner h2 {
-        font-size: 34px;
-    }
-
-    .desc {
-        font-size: 17px;
-        line-height: 1.4;
-    }
-
-    label {
-        font-size: 18px;
-    }
-
-    input {
-        height: 56px;
-        font-size: 18px;
-    }
-
-    button {
-        height: 56px;
-        font-size: 20px;
+    .form-title {
+        font-size: 31px;
     }
 }

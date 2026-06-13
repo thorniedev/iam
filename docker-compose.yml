@@ -21,6 +21,12 @@ services:
       KC_HTTP_ENABLED: "true"
       KC_PROXY_HEADERS: xforwarded
         # use "forwarded" if your proxy sends the Forwarded header
+
+       # Theme dev — disable caching so changes show on restart
+      KC_SPI_THEME_STATIC_MAX_AGE: -1
+      KC_SPI_THEME_CACHE_THEMES: "false"
+      KC_SPI_THEME_CACHE_TEMPLATES: "false"
+      
     ports:
       - "127.0.0.1:8080:8080"
 

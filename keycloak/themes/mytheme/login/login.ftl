@@ -1,95 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html<#if locale??> lang="${locale.currentLanguageTag}" dir="${(locale.rtl)?then('rtl','ltr')}"</#if>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>${msg("loginTitle",(realm.displayName!''))}</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicaon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="${url.resourcesPath}/img/favicaon.ico" type="image/x-icon">
     <link rel="stylesheet" href="${url.resourcesPath}/css/login.css">
-    <style>
-        @media (min-width: 901px) {
-            .hero-logo-wrap {
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-
-            .login-card {
-                max-width: 536px !important;
-                min-height: 576px !important;
-                padding: 46px 52px 56px !important;
-                border: 2px solid #111111 !important;
-                border-radius: 12px !important;
-            }
-
-            .login-card::before {
-                content: none !important;
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .right {
-                min-height: 100vh !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-            }
-
-            .login-card {
-                border: 0 !important;
-                padding: 0 !important;
-            }
-        }
-    </style>
 </head>
 
-<body>
-<div class="page">
+<body class="auth-body">
+<div class="auth-page">
 
-    <section class="left">
-        <div class="content">
-            <div class="hero-logo-wrap">
-                <img src="${url.resourcesPath}/logo/logo.png" class="hero-logo" alt="iCheck" width="260" height="92">
-            </div>
-
-            <h1>Smart Attendance for Modern Classrooms</h1>
-
-            <p class="subtitle">
+    <#-- LEFT: marketing / branding -->
+    <section class="auth-hero">
+        <div class="auth-hero-inner">
+            <h1 class="hero-title">Smart Attendance for Modern Classrooms</h1>
+            <p class="hero-sub">
                 A seamless, real-time tracking platform built to eliminate administrative
                 overhead and keep academic progress on track.
             </p>
 
-            <div class="feature">
-               
-                <div>
-                    <h3>QR & GPS Validation</h3>
-                    <p>Instant, secure, and location-verified student check-ins.</p>
-                </div>
-            </div>
+            <ul class="hero-features">
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">QR &amp; GPS Validation</span>
+                        <span class="hero-feature-desc">Instant, secure, and location-verified student check-ins.</span>
+                    </span>
+                </li>
 
-            <div class="feature">
-               
-                <div>
-                    <h3>Real-Time Monitoring</h3>
-                    <p>Live dashboard visibility for instructors to track attendance as it happens.</p>
-                </div>
-            </div>
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">Real-Time Monitoring</span>
+                        <span class="hero-feature-desc">Live dashboard visibility for instructors to track attendance as it happens.</span>
+                    </span>
+                </li>
 
-            <div class="feature">
-                
-                <div>
-                    <h3>Effortless Reporting</h3>
-                    <p>One-click exports to PDF and Excel for quick academic record-keeping.</p>
-                </div>
-            </div>
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+                    </span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">Effortless Reporting</span>
+                        <span class="hero-feature-desc">One-click exports to PDF and Excel for quick academic record-keeping.</span>
+                    </span>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <section class="right">
-        <div class="login-card">
-            <h2>Login</h2>
-            <p class="desc">Enter your credentials to continue</p>
+    <#-- RIGHT: form panel -->
+    <section class="auth-panel">
+        <div class="auth-panel-inner">
+
+            <div class="auth-top">
+                <img class="auth-logo" src="${url.resourcesPath}/logo/logo.png" alt="iCheck">
+
+                <#if realm.internationalizationEnabled && locale?? && locale.supported?size gt 1>
+                    <details class="lang">
+                        <summary>
+                            <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span>${locale.current}</span>
+                            <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <ul>
+                            <#list locale.supported as l>
+                                <li><a href="${l.url}">${l.label}</a></li>
+                            </#list>
+                        </ul>
+                    </details>
+                </#if>
+            </div>
+
+            <h2 class="form-title">Login</h2>
+            <p class="form-sub">Enter your credentials to continue</p>
 
             <#if message?has_content>
                 <div class="alert ${message.type}">
@@ -106,31 +97,49 @@
                     type="text"
                     value="${(login.username!'')}"
                     placeholder="Enter your username"
+                    autocomplete="username"
                     autofocus
                 >
 
                 <label for="password">Password</label>
-                <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                >
+                <div class="pwd-wrap">
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        autocomplete="current-password"
+                    >
+                    <button type="button" class="pwd-eye" data-target="password" aria-label="Show password">
+                        <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <svg class="eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 0 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c6.5 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3.5 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                    </button>
+                </div>
 
                 <#if url.loginResetCredentialsUrl??>
-                    <a class="forgot" href="${url.loginResetCredentialsUrl}">
-                        Forgot password?
-                    </a>
+                    <a class="forgot" href="${url.loginResetCredentialsUrl}">Forgot password?</a>
                 </#if>
 
                 <input type="hidden" name="credentialId" value="${credentialId!}">
 
-                <button type="submit">Sign in</button>
+                <button type="submit" class="btn">Sign in</button>
             </form>
 
         </div>
     </section>
 
 </div>
+
+<script>
+    document.querySelectorAll('.pwd-eye').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var input = document.getElementById(btn.getAttribute('data-target'));
+            if (!input) return;
+            var show = input.type === 'password';
+            input.type = show ? 'text' : 'password';
+            btn.classList.toggle('is-on', show);
+        });
+    });
+</script>
 </body>
 </html>

@@ -10,57 +10,72 @@
     <link rel="stylesheet" href="${url.resourcesPath}/css/login.css">
 </head>
 
-<body>
-<div class="page">
-    <section class="left">
-        <div class="content">
-            <div class="hero-logo-wrap">
-                <img src="${url.resourcesPath}/logo/logo.png" class="hero-logo" alt="iCheck" width="260" height="92">
-            </div>
+<body class="auth-body">
+<div class="auth-page">
 
-            <h1>Smart Attendance for Modern Classrooms</h1>
-
-            <p class="subtitle">
+    <#-- LEFT: marketing / branding -->
+    <section class="auth-hero">
+        <div class="auth-hero-inner">
+            <h1 class="hero-title">Smart Attendance for Modern Classrooms</h1>
+            <p class="hero-sub">
                 A seamless, real-time tracking platform built to eliminate administrative
                 overhead and keep academic progress on track.
             </p>
 
-            <div class="feature">
-                <div>
-                    <h3>QR &amp; GPS Validation</h3>
-                    <p>Instant, secure, and location-verified student check-ins.</p>
-                </div>
-            </div>
+            <ul class="hero-features">
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">QR &amp; GPS Validation</span>
+                        <span class="hero-feature-desc">Instant, secure, and location-verified student check-ins.</span>
+                    </span>
+                </li>
 
-            <div class="feature">
-                <div>
-                    <h3>Real-Time Monitoring</h3>
-                    <p>Live dashboard visibility for instructors to track attendance as it happens.</p>
-                </div>
-            </div>
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">Real-Time Monitoring</span>
+                        <span class="hero-feature-desc">Live dashboard visibility for instructors to track attendance as it happens.</span>
+                    </span>
+                </li>
 
-            <div class="feature">
-                <div>
-                    <h3>Effortless Reporting</h3>
-                    <p>One-click exports to PDF and Excel for quick academic record-keeping.</p>
-                </div>
-            </div>
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+                    </span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">Effortless Reporting</span>
+                        <span class="hero-feature-desc">One-click exports to PDF and Excel for quick academic record-keeping.</span>
+                    </span>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <section class="right">
-        <div class="login-card logout-card">
-            <h2>${msg("logoutHeading")}</h2>
-            <p class="desc">${msg("logoutSubtitle")}</p>
+    <#-- RIGHT: logout panel -->
+    <section class="auth-panel">
+        <div class="auth-panel-inner auth-panel-inner--logout">
+
+            <div class="auth-top">
+                <img class="auth-logo" src="${url.resourcesPath}/logo/logo.png" alt="iCheck">
+            </div>
+
+            <h2 class="form-title">${msg("logoutHeading")}</h2>
+            <p class="form-sub">${msg("logoutSubtitle")}</p>
 
             <form id="kc-logout-confirm" action="${url.logoutConfirmAction}" method="post">
                 <input type="hidden" name="session_code" value="${logoutConfirm.code}">
-                <button id="kc-logout" name="confirmLogout" type="submit">
+                <button id="kc-logout" name="confirmLogout" type="submit" class="btn">
                     ${msg("doLogout")}
                 </button>
             </form>
         </div>
     </section>
+
 </div>
 </body>
 </html>

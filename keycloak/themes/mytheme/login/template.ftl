@@ -13,109 +13,78 @@
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
-    <style>
-        @media (min-width: 901px) {
-            .hero-logo-wrap {
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-
-            .istad-panel-inner {
-                max-width: 536px !important;
-                min-height: 576px !important;
-                padding: 46px 52px 56px !important;
-                border: 2px solid #111111 !important;
-                border-radius: 12px !important;
-            }
-
-            .istad-panel-inner::before {
-                content: none !important;
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .istad-panel {
-                min-height: 100vh !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-            }
-
-            .istad-panel-inner {
-                border: 0 !important;
-                padding: 0 !important;
-            }
-        }
-    </style>
 </head>
-<body class="istad-body">
-<div class="istad-page">
+<body class="auth-body">
+<div class="auth-page">
 
-    <#-- LEFT: branding / marketing panel -->
-    <aside class="istad-hero">
-        <div class="istad-hero-inner">
-            <div class="hero-logo-wrap">
-                <img class="hero-logo" src="${url.resourcesPath}/logo/logo.png" alt="${(realm.displayName!'iCheck')}" width="260" height="92"/>
-            </div>
+    <#-- LEFT: marketing / branding -->
+    <section class="auth-hero">
+        <div class="auth-hero-inner">
+            <h1 class="hero-title">Smart Attendance for Modern Classrooms</h1>
+            <p class="hero-sub">
+                A seamless, real-time tracking platform built to eliminate administrative
+                overhead and keep academic progress on track.
+            </p>
 
-            <h1 class="istad-hero-title">Smart Attendance for Modern Classrooms</h1>
-            <p class="istad-hero-text">A seamless, real-time tracking platform built to eliminate administrative overhead and keep academic progress on track.</p>
-
-            <ul class="istad-features">
-                <li class="istad-feature">
-                    <span class="istad-feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+            <ul class="hero-features">
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                     </span>
-                    <span class="istad-feature-body">
-                        <span class="istad-feature-title">QR & GPS Validation</span>
-                        <span class="istad-feature-desc">Instant, secure, and location-verified student check-ins.</span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">QR &amp; GPS Validation</span>
+                        <span class="hero-feature-desc">Instant, secure, and location-verified student check-ins.</span>
                     </span>
                 </li>
-                <li class="istad-feature">
-                    <span class="istad-feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                     </span>
-                    <span class="istad-feature-body">
-                        <span class="istad-feature-title">Real-Time Monitoring</span>
-                        <span class="istad-feature-desc">Live dashboard visibility for instructors to track attendance as it happens.</span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">Real-Time Monitoring</span>
+                        <span class="hero-feature-desc">Live dashboard visibility for instructors to track attendance as it happens.</span>
                     </span>
                 </li>
-                <li class="istad-feature">
-                    <span class="istad-feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                <li class="hero-feature">
+                    <span class="hero-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
                     </span>
-                    <span class="istad-feature-body">
-                        <span class="istad-feature-title">Effortless Reporting</span>
-                        <span class="istad-feature-desc">One-click exports to PDF and Excel for quick academic record-keeping.</span>
+                    <span class="hero-feature-text">
+                        <span class="hero-feature-title">Effortless Reporting</span>
+                        <span class="hero-feature-desc">One-click exports to PDF and Excel for quick academic record-keeping.</span>
                     </span>
                 </li>
             </ul>
         </div>
-    </aside>
+    </section>
 
     <#-- RIGHT: form panel -->
-    <main class="istad-panel">
-        <#if realm.internationalizationEnabled && locale?? && locale.supported?size gt 1>
-            <details class="istad-locale">
-                <summary>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                    <span>${locale.current}</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                </summary>
-                <ul>
-                    <#list locale.supported as l>
-                        <li><a href="${l.url}">${l.label}</a></li>
-                    </#list>
-                </ul>
-            </details>
-        </#if>
+    <section class="auth-panel">
+        <div class="auth-panel-inner">
 
-        <div class="istad-panel-inner">
-            <#nested "header">
+            <div class="auth-top">
+                <img class="auth-logo" src="${url.resourcesPath}/logo/logo.png" alt="${(realm.displayName!'iCheck')}"/>
+
+                <#if realm.internationalizationEnabled && locale?? && locale.supported?size gt 1>
+                    <details class="lang">
+                        <summary>
+                            <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span>${locale.current}</span>
+                            <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <ul>
+                            <#list locale.supported as l>
+                                <li><a href="${l.url}">${l.label}</a></li>
+                            </#list>
+                        </ul>
+                    </details>
+                </#if>
+            </div>
+
+            <h2 class="form-title"><#nested "header"></h2>
 
             <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
-                <div class="istad-alert istad-alert-${message.type}">
+                <div class="alert ${message.type}">
                     ${kcSanitize(message.summary)?no_esc}
                 </div>
             </#if>
@@ -125,21 +94,22 @@
             <#nested "socialProviders">
 
             <#if displayInfo>
-                <div class="istad-info">
+                <div class="auth-info">
                     <#nested "info">
                 </div>
             </#if>
         </div>
-    </main>
+    </section>
 </div>
 
 <script>
-    document.querySelectorAll('.istad-eye').forEach(function (btn) {
+    document.querySelectorAll('.pwd-eye').forEach(function (btn) {
         btn.addEventListener('click', function () {
             var input = document.getElementById(btn.getAttribute('data-target'));
             if (!input) return;
-            input.type = input.type === 'password' ? 'text' : 'password';
-            btn.classList.toggle('is-on');
+            var show = input.type === 'password';
+            input.type = show ? 'text' : 'password';
+            btn.classList.toggle('is-on', show);
         });
     });
 </script>
