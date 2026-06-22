@@ -142,6 +142,17 @@
                         </a>
                     </#list>
                 </div>
+            <#else>
+                <div class="social-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <div class="social-providers">
+                    <a id="social-google-fallback" class="social-provider social-provider-google" href="#" data-idp-hint="google">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 10.2v3.9h5.5c-.2 1.3-1.7 3.8-5.5 3.8-3.3 0-6-2.7-6-6s2.7-6 6-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.4 14.6 2.4 12 2.4 6.7 2.4 2.4 6.7 2.4 12S6.7 21.6 12 21.6c6.9 0 9.2-4.9 9.2-7.4 0-.5 0-.8-.1-1.2H12z"/></svg>
+                        <span>Continue with Google</span>
+                    </a>
+                </div>
             </#if>
 
             <#if realm.registrationAllowed && url.registrationUrl??>
@@ -165,6 +176,18 @@
             input.type = show ? 'text' : 'password';
             btn.classList.toggle('is-on', show);
         });
+    });
+
+    document.querySelectorAll('[data-idp-hint]').forEach(function (link) {
+        var hint = link.getAttribute('data-idp-hint');
+        if (!hint) return;
+        try {
+            var idpUrl = new URL(window.location.href);
+            idpUrl.searchParams.set('kc_idp_hint', hint);
+            link.setAttribute('href', idpUrl.toString());
+        } catch (error) {
+            link.setAttribute('href', '#');
+        }
     });
 </script>
 </body>
