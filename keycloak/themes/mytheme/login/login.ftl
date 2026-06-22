@@ -132,10 +132,11 @@
 
                 <div class="social-providers">
                     <#list social.providers as p>
+                        <#assign providerKey = ((p.alias!"") + " " + (p.displayName!""))?lower_case>
                         <a id="social-${p.alias}" class="social-provider social-provider-${p.alias}" href="${p.loginUrl}">
-                            <#if p.alias == "google">
+                            <#if providerKey?contains("google")>
                                 <svg viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84c-.21 1.12-.84 2.07-1.8 2.71v2.25h2.91c1.7-1.56 2.69-3.87 2.69-6.6z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.19l-2.91-2.25c-.8.54-1.83.86-3.04.86-2.34 0-4.33-1.58-5.04-3.71H.96v2.32C2.44 15.97 5.48 18 9 18z"/><path fill="#FBBC05" d="M3.96 10.71c-.18-.54-.28-1.12-.28-1.71s.1-1.17.28-1.71V4.97H.96C.35 6.18 0 7.55 0 9s.35 2.82.96 4.03l3-2.32z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.9 11.43 0 9 0 5.48 0 2.44 2.03.96 4.97l3 2.32C4.67 5.16 6.66 3.58 9 3.58z"/></svg>
-                            <#elseif p.alias == "facebook">
+                            <#elseif providerKey?contains("facebook")>
                                 <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1877F2"/><path fill="#fff" d="M13.2 22v-7.7h2.6l.4-3h-3V9.4c0-.9.2-1.5 1.5-1.5h1.6V5.2c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.5v3h2.6V22h3.1z"/></svg>
                             </#if>
                             <span>Continue with ${p.displayName!p.alias}</span>
