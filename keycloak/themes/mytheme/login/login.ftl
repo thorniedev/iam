@@ -125,6 +125,32 @@
                 <button type="submit" class="btn">Sign in</button>
             </form>
 
+            <#if social?? && social.providers?? && social.providers?has_content>
+                <div class="social-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <div class="social-providers">
+                    <#list social.providers as p>
+                        <a id="social-${p.alias}" class="social-provider social-provider-${p.alias}" href="${p.loginUrl}">
+                            <#if p.alias == "google">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 10.2v3.9h5.5c-.2 1.3-1.7 3.8-5.5 3.8-3.3 0-6-2.7-6-6s2.7-6 6-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.4 14.6 2.4 12 2.4 6.7 2.4 2.4 6.7 2.4 12S6.7 21.6 12 21.6c6.9 0 9.2-4.9 9.2-7.4 0-.5 0-.8-.1-1.2H12z"/></svg>
+                            <#elseif p.alias == "facebook">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M22 12.1C22 6.5 17.5 2 12 2S2 6.5 2 12.1C2 17.1 5.7 21.3 10.4 22v-7H7.9v-2.9h2.5V9.9c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.9h2.8l-.4 2.9h-2.4v7C18.3 21.3 22 17.1 22 12.1z"/></svg>
+                            </#if>
+                            <span>${p.displayName!p.alias}</span>
+                        </a>
+                    </#list>
+                </div>
+            </#if>
+
+            <#if realm.registrationAllowed && url.registrationUrl??>
+                <p class="register-link">
+                    Don't have an account?
+                    <a href="${url.registrationUrl}">Register</a>
+                </p>
+            </#if>
+
         </div>
     </section>
 

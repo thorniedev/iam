@@ -331,6 +331,72 @@ input:focus {
     margin-top: 24px;
 }
 
+/* social login + registration */
+.social-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 28px 0 18px;
+    color: #98a2b3;
+    font-size: 14px;
+}
+
+.social-divider::before,
+.social-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #e2e8f0;
+}
+
+.social-providers {
+    display: grid;
+    gap: 12px;
+}
+
+.social-provider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #101828;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.social-provider:hover {
+    background: #f8fafc;
+    border-color: #98a2b3;
+}
+
+.social-provider svg {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+}
+
+.register-link {
+    margin: 24px 0 0;
+    color: #667085;
+    font-size: 15px;
+    text-align: center;
+}
+
+.register-link a {
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
 /* alert */
 .alert,
 .istad-alert {
